@@ -1,0 +1,202 @@
+[Node]
+DataDir = "/root/.galaxy"
+IPCPath = "galaxy.ipc"
+HTTPHost = "0.0.0.0"
+HTTPPort = 15050
+HTTPCors = ["*"]
+HTTPVirtualHosts = ["*"]
+HTTPModules = ["eth", "debug", "net", "admin", "web3", "personal", "txpool", "glxy", "dag"]
+WSHost = ""
+WSPort = 15051
+WSModules = ["eth", "glxy", "dag", "sfc", "abft", "web3"]
+GraphQLVirtualHosts = ["localhost"]
+
+[Node.P2P]
+MaxPeers = 128
+MaxPendingPeers = 128
+NoDiscovery = false
+DiscoveryV5 = true
+BootstrapNodes = ["enode://14d6394edd100561ec1b32e329f055708606150f145f6671bb86c0f6ffaaa403b2f12dc105527fa65bc2d0f5044e7c84fb5a2da6e728af7eee123d690c88e5b3@185.64.104.234:15060", "enode://f9c8b7579ee590f42573e70ed647e30da884e760b07e5286a9c6a554fa44e91dc188b43240555a4b8bb17c81965654284309fffeefba161d31eb422b3ff95b1a@85.206.161.56:15060", "enode://3c2bb91c3b7315f2ef83eaed2774cfdcf49cbb780bea360e92e4796e42c3e4ce5fb6e8215c31e153328413f252e87cfc052681bc5935cd5b17926657607399dc@85.206.161.57:15060", "enode://8582953e20947b13de4084448e655f4f148799b0f03f2dc639eb33b092c1684c09e771e3e92686d7aba3487bf24cf3c19efe26bcacd96c762e280959d00ac551@85.206.161.110:15060", "enode://14d6394edd100561ec1b32e329f055708606150f145f6671bb86c0f6ffaaa403b2f12dc105527fa65bc2d0f5044e7c84fb5a2da6e728af7eee123d690c88e5b3@85.206.161.93:15060", "enode://f9c8b7579ee590f42573e70ed647e30da884e760b07e5286a9c6a554fa44e91dc188b43240555a4b8bb17c81965654284309fffeefba161d31eb422b3ff95b1a@85.206.161.91:15060", "enode://3c2bb91c3b7315f2ef83eaed2774cfdcf49cbb780bea360e92e4796e42c3e4ce5fb6e8215c31e153328413f252e87cfc052681bc5935cd5b17926657607399dc@85.206.161.92:15060", "enode://8582953e20947b13de4084448e655f4f148799b0f03f2dc639eb33b092c1684c09e771e3e92686d7aba3487bf24cf3c19efe26bcacd96c762e280959d00ac551@85.206.161.104:15060"]
+BootstrapNodesV5 = ["enode://14d6394edd100561ec1b32e329f055708606150f145f6671bb86c0f6ffaaa403b2f12dc105527fa65bc2d0f5044e7c84fb5a2da6e728af7eee123d690c88e5b3@185.64.104.234:15060", "enode://f9c8b7579ee590f42573e70ed647e30da884e760b07e5286a9c6a554fa44e91dc188b43240555a4b8bb17c81965654284309fffeefba161d31eb422b3ff95b1a@85.206.161.56:15060", "enode://3c2bb91c3b7315f2ef83eaed2774cfdcf49cbb780bea360e92e4796e42c3e4ce5fb6e8215c31e153328413f252e87cfc052681bc5935cd5b17926657607399dc@85.206.161.57:15060", "enode://8582953e20947b13de4084448e655f4f148799b0f03f2dc639eb33b092c1684c09e771e3e92686d7aba3487bf24cf3c19efe26bcacd96c762e280959d00ac551@85.206.161.110:15060", "enode://14d6394edd100561ec1b32e329f055708606150f145f6671bb86c0f6ffaaa403b2f12dc105527fa65bc2d0f5044e7c84fb5a2da6e728af7eee123d690c88e5b3@85.206.161.93:15060", "enode://f9c8b7579ee590f42573e70ed647e30da884e760b07e5286a9c6a554fa44e91dc188b43240555a4b8bb17c81965654284309fffeefba161d31eb422b3ff95b1a@85.206.161.91:15060", "enode://3c2bb91c3b7315f2ef83eaed2774cfdcf49cbb780bea360e92e4796e42c3e4ce5fb6e8215c31e153328413f252e87cfc052681bc5935cd5b17926657607399dc@85.206.161.92:15060", "enode://8582953e20947b13de4084448e655f4f148799b0f03f2dc639eb33b092c1684c09e771e3e92686d7aba3487bf24cf3c19efe26bcacd96c762e280959d00ac551@85.206.161.104:15060"]
+StaticNodes = []
+TrustedNodes = []
+ListenAddr = ":15060"
+EnableMsgEvents = false
+
+[Node.HTTPTimeouts]
+ReadTimeout = 30000000000
+WriteTimeout = 30000000000
+IdleTimeout = 120000000000
+
+[Galaxy]
+TxIndex = true
+RPCGasCap = 25000000
+RPCTxFeeCap = 1e+02
+AllowUnprotectedTxs = false
+ExtRPCEnabled = false
+RPCLogsBloom = true
+
+[Galaxy.Emitter]
+VersionToPublish = "1.0.2-rc.5"
+MaxTxsPerAddress = 32
+MaxParents = 0
+LimitedTpsThreshold = 3360000
+NoTxsThreshold = 840000
+EmergencyThreshold = 140000
+TxsCacheInvalidation = 200000000
+
+[Galaxy.Emitter.Validator]
+ID = 0
+
+[Galaxy.Emitter.Validator.PubKey]
+Type = 0
+Raw = []
+
+[Galaxy.Emitter.EmitIntervals]
+Min = 110000000
+Max = 600000000000
+Confirming = 120000000
+ParallelInstanceProtection = 60000000000
+DoublesignProtection = 1620000000000
+
+[Galaxy.Emitter.PrevEmittedEventFile]
+Path = ""
+SyncMode = false
+
+[Galaxy.TxPool]
+Locals = []
+NoLocals = false
+Journal = "transactions.rlp"
+Rejournal = 3600000000000
+PriceLimit = 1
+PriceBump = 10
+AccountSlots = 16
+GlobalSlots = 1024
+AccountQueue = 32
+GlobalQueue = 8192
+Lifetime = 10800000000000
+
+[Galaxy.FilterAPI]
+IndexedLogsBlockRangeLimit = 999999999999999999
+UnindexedLogsBlockRangeLimit = 100
+
+[Galaxy.Protocol]
+LatencyImportance = 60
+ThroughputImportance = 40
+MsgsSemaphoreTimeout = 10000000000
+ProgressBroadcastPeriod = 10000000000
+MaxInitialTxHashesSend = 20000
+MaxRandomTxHashesSend = 128
+RandomTxHashesSendPeriod = 20000000000
+
+[Galaxy.Protocol.EventsSemaphoreLimit]
+Num = 10000
+Size = 31457280
+
+[Galaxy.Protocol.MsgsSemaphoreLimit]
+Num = 1000
+Size = 31457280
+
+[Galaxy.Protocol.Processor]
+EventsSemaphoreTimeout = 10000000000
+MaxUnorderedInsertions = 0
+
+[Galaxy.Protocol.Processor.EventsBufferLimit]
+Num = 3250
+Size = 11534336
+
+[Galaxy.Protocol.DagFetcher]
+ForgetTimeout = 60000000000
+ArriveTimeout = 4000000000
+GatherSlack = 100000000
+HashLimit = 10000
+MaxBatch = 512
+MaxParallelRequests = 192
+MaxQueuedBatches = 32
+
+[Galaxy.Protocol.TxFetcher]
+ForgetTimeout = 60000000000
+ArriveTimeout = 1000000000
+GatherSlack = 100000000
+HashLimit = 10000
+MaxBatch = 512
+MaxParallelRequests = 64
+MaxQueuedBatches = 32
+
+[Galaxy.Protocol.StreamLeecher]
+RecheckInterval = 1000000000
+BaseProgressWatchdog = 5000000000
+BaseSessionWatchdog = 150000000000
+MinSessionRestart = 5000000000
+MaxSessionRestart = 240000000000
+
+[Galaxy.Protocol.StreamLeecher.Session]
+RecheckInterval = 10000000
+ParallelChunksDownload = 6
+
+[Galaxy.Protocol.StreamLeecher.Session.DefaultChunkSize]
+Num = 500
+Size = 524288
+
+[Galaxy.Protocol.StreamSeeder]
+SenderThreads = 8
+MaxSenderTasks = 128
+MaxPendingResponsesSize = 67108864
+MaxResponseChunks = 12
+
+[Galaxy.Protocol.PeerCache]
+MaxKnownTxs = 24576
+MaxKnownEvents = 24576
+MaxQueuedItems = 4096
+MaxQueuedSize = 10486784
+
+[Galaxy.HeavyCheck]
+MaxQueuedBatches = 128
+MaxBatch = 8
+Threads = 0
+
+[Galaxy.GPO]
+MaxPrice = 1000000000000000
+MinPrice = 0
+MaxPriceMultiplierRatio = 20000000
+MiddlePriceMultiplierRatio = 4000000
+GasPowerWallRatio = 50000
+
+[Galaxy.VersionWatcher]
+ShutDownIfNotUpgraded = false
+WarningIfNotUpgradedEvery = 5000000000
+
+[GalaxyStore]
+MaxNonFlushedSize = 23068672
+MaxNonFlushedPeriod = 1800000000000
+
+[GalaxyStore.Cache]
+EventsNum = 5000
+EventsSize = 6291456
+BlocksNum = 5000
+BlocksSize = 524288
+
+[GalaxyStore.EVM]
+EnableSnapshots = true
+EnablePreimageRecording = true
+
+[GalaxyStore.EVM.Cache]
+ReceiptsSize = 4194304
+ReceiptsBlocks = 4000
+TxPositions = 20000
+EvmDatabase = 33554432
+EvmSnap = 33554432
+EvmBlocksNum = 5000
+EvmBlocksSize = 6291456
+
+[LachesisStore.Cache]
+RootsNum = 1000
+RootsFrames = 100
+
+[VectorClock.Fc.Caches]
+ForklessCausePairs = 20000
+HighestBeforeSeqSize = 163840
+LowestAfterSeqSize = 163840
+
+[VectorClock.Caches]
+HighestBeforeTimeSize = 163840
